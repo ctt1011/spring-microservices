@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    # active: native
+    active: git
+  cloud:
+    config:
+      server:
+        # native:
+        #   search-locations: file:///C://config
+        git:
+          uri: https://github.com/ctt1011/spring-microservices-config.git
+          clone-on-start: true
+          default-label: master
+          skipSslValidation: true
+
+server:
+  port: 8083

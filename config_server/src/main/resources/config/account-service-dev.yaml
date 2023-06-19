@@ -1,0 +1,14 @@
+account-service:
+  msg: Welcome to the Account Service Dev application
+  build-version: 3
+
+  mail-details:
+    hostName: dev-account@gmail.com
+    port: 8080
+    from: dev-account@gmail.com
+    subject: Your Account Details from Bank Dev Environment
+
+  active-branches:
+    - Chennai
+    - Berlin
+    - Indianapollis

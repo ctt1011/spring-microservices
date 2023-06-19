@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  account_service:
+    image: chungtai1011/spring-microservices_account-service
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+      - "9090:8080"
+    networks:
+      - iatnat-network
+  card_service:
+    image: chungtai1011/spring-microservices_card-service
+    mem_limit: 700m
+    ports:
+      - "8081:8081"
+    networks:
+      - iatnat-network
+  loan_service:
+    image: chungtai1011/spring-microservices_loan-service
+    mem_limit: 700m
+    ports:
+      - "8082:8082"
+    networks:
+      - iatnat-network
+networks:
+  iatnat-network:

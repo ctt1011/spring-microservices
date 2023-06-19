@@ -1,0 +1,14 @@
+loan-service:
+  msg: Welcome to the Loan Service Production application
+  build-version: 3
+
+  mail-details:
+    hostName: prod-loan@gmail.com
+    port: 8080
+    from: prod-loan@gmail.com
+    subject: Your Loan Details from Bank Production Environment
+
+  active-branches:
+    - Hyderabad
+    - Paris
+    - NewYork

@@ -1,0 +1,14 @@
+card-service:
+  msg: Welcome to the Card Service Production application
+  build-version: 3
+
+  mail-details:
+    hostName: prod-card@gmail.com
+    port: 8080
+    from: prod-card@gmail.com
+    subject: Your Card Details from Bank Production Environment
+
+  active-branches:
+    - Hyderabad
+    - Paris
+    - NewYork

@@ -1,0 +1,15 @@
+account-service:
+  msg: Welcome to the Account Service Default application
+  build-version: 3
+
+  mail-details:
+    hostName: default-account@gmail.com
+    port: 8080
+    from: default-account@gmail.com
+    subject: Your Account Details from Bank Default Environment
+
+  active-branches:
+    - Mumbai
+    - London
+    - Washington
+  

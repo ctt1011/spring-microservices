@@ -1,0 +1,14 @@
+account-service:
+  msg: Welcome to the Account Service Production application
+  build-version: 3
+
+  mail-details:
+    hostName: prod-account@gmail.com
+    port: 8080
+    from: prod-account@gmail.com
+    subject: Your Account Details from Bank Production Environment
+
+  active-branches:
+    - Hyderabad
+    - Paris
+    - NewYork
