@@ -1,0 +1,69 @@
+version: "3.8"
+services:
+  config_server:
+    image: chungtai1011/spring-microservices_config-server
+    mem_limit: 700m
+    ports:
+      - "8083:8083"
+    networks:
+      - iatnat-network
+  account_service:
+    image: chungtai1011/spring-microservices_account-service
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    depends_on: 
+      - config_server 
+    deploy:
+      restart_policy:
+          condition: on-failure
+          delay: 5s
+          max_attempts: 3
+          window: 120s
+    environment:
+      SPRING_APPLICATION_NAME: account-service
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://config_server:8083/
+    networks:
+      - iatnat-network
+  card_service:
+    image: chungtai1011/spring-microservices_card-service
+    mem_limit: 700m
+    ports:
+      - "8081:8081"
+    depends_on: 
+      - config_server 
+    deploy:
+      restart_policy:
+          condition: on-failure
+          delay: 5s
+          max_attempts: 3
+          window: 120s
+    environment:
+      SPRING_APPLICATION_NAME: card-service
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://config_server:8083/
+    networks:
+      - iatnat-network
+  loan_service:
+    image: chungtai1011/spring-microservices_loan-service
+    mem_limit: 700m
+    ports:
+      - "8082:8082"
+    depends_on: 
+      - config_server 
+    deploy:
+      restart_policy:
+          condition: on-failure
+          delay: 5s
+          max_attempts: 3
+          window: 120s
+    environment:
+      SPRING_APPLICATION_NAME: loan-service
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://config_server:8083/
+    networks:
+      - iatnat-network
+  
+networks:
+  iatnat-network:
