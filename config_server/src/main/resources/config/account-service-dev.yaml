@@ -1,5 +1,5 @@
 account-service:
-  msg: Welcome to the Account Service Dev application
+  msg: bd4e30bbf6627daeeefdb30aed32ccb751e7d47f442965c949bfbe6789263a3ef511741898409dc8fff9ee6b58955b37713899c36028135dd6d3416659342909
   build-version: 3
 
   mail-details:
